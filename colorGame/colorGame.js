@@ -47,12 +47,12 @@ for(var i=0; i<squares.length;i++){
         squares[j].style.backgroundColor=pickedColor
       }
       h1.style.backgroundColor=pickedColor
-      message.textContent="Congratulations!"
+      message.textContent="Correct!"
       resetButtom.textContent="Play Again"
     }
     else if(clickedColor!==defualtColor){
       this.style.backgroundColor=defualtColor
-      message.textContent="Try Again"
+      message.textContent="Continue"
     }
   })
 }
