@@ -7,14 +7,20 @@ $("ul").on("click", "span", function(event){
   })
   event.stopPropagation()//not trigger parent events
 })
-
 $("input[type='text']").keypress(function(event){
   if(event.which===13){
-    var todoItem=$(this).val()
+    $(this).next().focus();
+  }
+})
+$("input[type='time']").keypress(function(event){
+  if(event.which===13){
+    var todoItem=$(this).prev().val()
+    var time=$(this).val()
     $(this).val("")
-    $("ul").append("<li><span><i class='fas fa-trash-alt'></i></span> "+todoItem+"</li>")
+    $(this).prev().val("")
+    $("ul").append("<li><span class='deletIcon'><i class='fas fa-trash-alt'></i></span> "+todoItem+"<span class='time'>"+time+"</span></li>")
   }
 })
 $(".fa-plus-square").on("click",function(){
-  $("input[type='text']").slideToggle(800);
+  $("input").slideToggle(800);
 })

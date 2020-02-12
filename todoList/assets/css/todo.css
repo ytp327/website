@@ -1,20 +1,20 @@
 #container{
-  width:360px;
+  width:450px;
   margin:100px auto;
   box-shadow: 0 0 3px rgba(0,0,0,0.3);
   background: #dddddd;
 }
 body{
-  /* background: #2980B9; 
-  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); 
-  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  */
+  /* background: #4aacec; 
+  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #4aacec); 
+  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #4aacec);  */
   font-family: Roboto;
   background-image: url("https://images.unsplash.com/photo-1474533883693-59a44dbb964e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
   background-size: cover;
   background-repeat: no-repeat; /* Do not repeat the image */
 }
 h1{
-  background:#2980b9;
+  background:#4aacec;
   color:white;
   margin: 0;
   padding: 10px 20px;
@@ -22,7 +22,29 @@ h1{
   font-size: 24px;
   font-weight: normal;
 }
+input{
+  font-size: 18px;
+  color:#4aacec;
+  background-color: #dddddd;
+  
+  padding: 13px 13px 13px 20px;
+  box-sizing: border-box;
+  border: 3px solid #dddddd;
+  float: left;
+}
+input[type='text']{
+  width: 60%;
+}
+input[type='time']{
+  width: 40%;
+}
+input:focus{
+  background: #ffffff;
+  border: 3px solid #4aacec;
+  outline: none;
+}
 ul{
+  clear:left;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -40,7 +62,7 @@ li:hover span{
   width: 40px;
   opacity: 1;
 }
-span{
+.deletIcon {
   background: #e74c3c;
   height: 40px;
   margin-right: 20px;
@@ -51,19 +73,9 @@ span{
   transition: 0.2s linear;
   opacity: 0;
 }
-input{
-  font-size: 18px;
-  color:#2980b9;
-  background-color: #dddddd;
-  width: 100%;
-  padding: 13px 13px 13px 20px;
-  box-sizing: border-box;
-  border: 3px solid #dddddd;
-}
-input:focus{
-  background: #ffffff;
-  border: 3px solid #2980b9;
-  outline: none;
+.time{
+  float: right;
+  margin:0 20px;
 }
 .completed{
   color:gray;

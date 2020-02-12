@@ -12,12 +12,13 @@
 <body>
   <div id="container">
     <h1>Todo List <i class="fas fa-plus-square"></i></h1>
-    <input type="text" placeholder="Add new todo">
+    <div><input type="text" placeholder="Add new todo">
+      <input type="time" name="time" /></div>
     <ul>
-      <li><span><i class="fas fa-trash-alt"></i></span> Wake up</li>
-      <li><span><i class="fas fa-trash-alt"></i></span> Go running</li>
-      <li><span><i class="fas fa-trash-alt"></i></span> Eat breakfast</li>
-      <li><span><i class="fas fa-trash-alt"></i></span> Get ready for studying</li>
+      <li><span class="deletIcon"><i class="fas fa-trash-alt"></i></span> Wake up <span class="time">07:00</span></li>
+      <li><span class="deletIcon"><i class="fas fa-trash-alt"></i></span> Go running <span class="time">07:15</span></li>
+      <li><span class="deletIcon"><i class="fas fa-trash-alt"></i></span> Eat breakfast <span class="time">08:00</span></li>
+      <li><span class="deletIcon"><i class="fas fa-trash-alt"></i></span> Get ready for studying <span class="time">08:20</span></li>
     </ul>
   </div>
 </body>
