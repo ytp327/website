@@ -1,0 +1,33 @@
+body{
+  background: url(images/frontImage.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.content{
+  color:wheat;
+  text-align: center;
+  padding-top:20%;
+  text-shadow: 0 4px 3px rgba(0,0,0,0.4),
+              0 8px 13px rgba(0,0,0,0.1),
+              0 18px 23px rgba(0,0,0,0.1);
+}
+
+html{
+  height: 100%;
+}
+
+hr{
+  width:400px;
+  border-top: 1px solid wheat;
+  /* shadow */
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+h1{
+  position: absolute;
+  top: 40%; left: 30%;
+}
+button{
+  position: absolute;
+  top: 75%; left:45%;
+}
