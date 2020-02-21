@@ -11,9 +11,40 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script> //audio play
+      function aud_play_pause() {
+        var myAudio = document.getElementById("myAudio");
+        var louderF = function(){
+          if(myAudio.volume < 0.3) {
+              myAudio.volume+=0.0003;
+          } else clearInterval(louder);
+        }
+        var weakerF = function(){
+          if(myAudio.volume > 0.001) {
+                myAudio.volume-=0.001;
+          } else {
+            clearInterval(weaker);myAudio.pause();}
+        }
+        if (myAudio.paused) {
+          myAudio.play();
+          myAudio.volume=0;
+          var louder =setInterval(louderF, 1);
+  
+        } else {
+          var weaker =setInterval(weakerF, 1);
+        }
+        
+      }
+    </script>
 </head>
 
 <body>
+  <audio id="myAudio" autoplay="autoplay">
+    <source src="../audio/canonInD.mp3" type='audio/mp3'>
+    Your user agent does not support the HTML5 Audio element.
+  </audio> 
+  <button type="button" class="btn btn-default Fixed" aria-label="Left Align" onclick="aud_play_pause()"><i class="fas fa-music fa-2x"></i></button>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <div class="first-navbar-brand">

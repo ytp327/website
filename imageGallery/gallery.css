@@ -15,3 +15,13 @@
 .imagesDescription{
   text-align: center;
 }
+/* audio button */
+.Fixed{
+  position: fixed;
+  top: 40%;
+  left:2%;
+}
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}

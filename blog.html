@@ -12,8 +12,38 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
   <link rel="stylesheet" href="Blog.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+  <script> //audio play
+    function aud_play_pause() {
+      var myAudio = document.getElementById("myAudio");
+      var louderF = function(){
+        if(myAudio.volume < 0.3) {
+            myAudio.volume+=0.0003;
+        } else clearInterval(louder);
+      }
+      var weakerF = function(){
+        if(myAudio.volume > 0.001) {
+              myAudio.volume-=0.001;
+        } else {
+          clearInterval(weaker);myAudio.pause();}
+      }
+      if (myAudio.paused) {
+        myAudio.play();
+        myAudio.volume=0;
+        var louder =setInterval(louderF, 1);
+
+      } else {
+        var weaker =setInterval(weakerF, 1);
+      }
+      
+    }
+  </script>
 </head>
 <body>
+    <button type="button" class="btn btn-default Fixed" aria-label="Left Align" onclick="aud_play_pause()"><i class="fas fa-music fa-2x"></i></button>
+    <audio id="myAudio" autoplay="autoplay">
+      <source src="audio/theBornWinner.mp3" type='audio/mp3'>
+      Your user agent does not support the HTML5 Audio element.
+    </audio> 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <div class="first-navbar-brand">
@@ -57,6 +87,7 @@
   </nav>
   
   <br>
+  
     <div class="link">
         <a href="https://github.com/1464439923">
             <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" id="gitIcon"></a>
@@ -64,12 +95,15 @@
         <a href="https://www.linkedin.com/in/tianpei-yang-591604181/"><img src="images/linkedin.png" id="linkedinIcon"></a>
         <span class="spaceBetweenIcon"></span>
         <a href="https://www.researchgate.net/profile/Tianpei_Yang4"><img src="images/researchGate.png" id="researchGateIcon"></a>
+        <span class="spaceBetweenIcon"></span>
+        <span class="spaceBetweenIcon"></span>
+        <font size=4.5>Recommend browsing this web on your computer.</font>
     </div>
     
     <div id="all">
         <div class="post">
           <h2>PERSONAL INFORMATION</h2>
-          <p>Full name: Tianpei Yang</p>
+          <p>Full name: <font size=4><b>Tianpei Yang</b></font></p>
           <p>Email: ytp327@gmail.com</p>
           <p>Phone#: (646) 215-0019</p>
         </div>
@@ -85,12 +119,11 @@
 
         <div class="post">
           <h2>PUBLICATION</h2>
-          <div class="date">[PLUBLISHED]</div>
+          <div class="date"><a href="https://link.springer.com/chapter/10.1007/978-3-319-97304-3_7">[PUBLISHED]</a></div>
           <p>Chao Yu, Dongxu Wang, <font size=4><b>Tianpei Yang</b></font>, et al. "Adaptively Shaping Reinforcement Learning Agents via Human Reward."
             <i><b>Pacific Rim International Conference on Artificial Intelligence.</b>Springer, Cham, 2018.</i> </p>
-          <div class="date">[PLUBLISHED]</div>
-          <p>Ruotong Li, <font size=4><b>Tianpei Yang</b></font>, Weixin Si, et al. "Augmented Reality Guided Respiratory Liver Tumors Punctures: A
-            Preliminary Feasibility Study." <i><b>SIGGRAPH Asia </b>2019 Technical Briefs, pp. 114-117. ACM, 2019.</i>  </p>
+          <div class="date"><a href="https://dl.acm.org/doi/abs/10.1145/3355088.3365166">[PUBLISHED]</a></div>
+          <p>Ruotong Li, <font size=4><b>Tianpei Yang</b></font>, Weixin Si, et al. "Augmented Reality Guided Respiratory Liver Tumors Punctures: <br> A Preliminary Feasibility Study."<i><b>SIGGRAPH Asia </b>2019 Technical Briefs, pp. 114-117. ACM, 2019.</i>  </p>
           <div class="date">[ACCEPTED]</div>
           <p>Yang Tian, Yuming Bai, Shengdong Zhao, Chi-Wing Fu, <font size=4><b>Tianpei Yang</b></font>, Pheng-Ann Heng. "Pseudo-Proprioception:
             Extending Effective Scope of Proprioception in VR through Virtual Limbs."<i><b> CHI 2020</b></i> </p>
@@ -100,77 +133,170 @@
         </div>
 
       <div class="post">
+        
+        <button class="btn btn-primary toggleAllButton" type="button" data-toggle="collapse" data-target="#CAS,#Neusoft,#DLUT" aria-expanded="false" aria-controls="collapseExample">
+          <strong>Show/Hide All</strong>  
+        </button>
         <h2>LEADERSHIP & INTERNSHIP</h2>
-        <div class="date">Jan 2019 – Aug 2019</div>
-        <p class="emph"><strong>Research Intern of Chinese Academy of Sciences </strong> (world's largest research organization)</p>
-        <p>Developed a system that allows remote users to have “face-to-face” communications and immersive interactions in
-          virtual reality environment. And accomplished my undergraduate thesis by illustrating and analyzing the VR system.</p>
-        <p>Proposed a novel augmented reality guidance modality for improving the precision of liver tumors punctures by 20%.</p>
-        <p>Analyzed in detail how reference objects influence users’ distance awareness in virtual reality environment.</p>
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#CAS" aria-expanded="false" aria-controls="collapseExample">
+            <strong>Research Intern of Chinese Academy of Sciences </strong> (world's largest research organization)   
+          </button>
+          <span class="date">Jan 2019 – Aug 2019</span>
+        </p>
 
-        <div class="date">May 2018 – May 2018</div>
-        <p class="emph"><strong>Intern of Software Development Department of Neusoft</strong></p>
-        <p>Participated in developing software defect management system for IT solution and service products.</p>
-        <p>Used Myeclipse to maintain Spring MVC which serves to handle HTTP requests, connect to database to get target data
-        through MyBatis then return customized responses.</p>
-        <div class="date">Mar 2017 – Mar 2018</div>
-        <p class="emph"><strong>Minister of Social Practice Department in Dalian University of Technology</strong></p>
-        <p>Managed 47 members and served for over 3000 students’ social practices in our Faculty.</p>
-        <p>Accumulated planning large scale activities (over 200 participants) experience and enhanced management ability.</p>
-        <p>Acquired the ability to produce attracting slides and to give a fluent speech to over 200 audiences without draft.</p>
+        <div class="collapse" id="CAS">
+          <div class="card card-body">
+            <p>Developed a system that allows remote users to have “face-to-face” communications and immersive interactions in
+              virtual reality environment. And accomplished my undergraduate thesis by illustrating and analyzing the VR system.</p>
+            <p>Proposed a novel augmented reality guidance modality for improving the precision of liver tumors punctures by 20%.</p>
+            <p>Analyzed in detail how reference objects influence users’ distance awareness in virtual reality environment.</p>
+          </div>
+        </div>
+        
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#Neusoft" aria-expanded="false" aria-controls="collapseExample">
+            <strong>Intern of Software Development Department of Neusoft </strong>  
+          </button>
+          <span class="date">May 2018 – May 2018</span>
+        </p>
+        
+        <div class="collapse" id="Neusoft">
+          <div class="card card-body">
+            <p>Participated in developing software defect management system for IT solution and service products.</p>
+            <p>Used Myeclipse to maintain Spring MVC which serves to handle HTTP requests, connect to database to get target data
+            through MyBatis then return customized responses.</p>
+          </div>
+        </div>
+
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#DLUT" aria-expanded="false" aria-controls="collapseExample">
+            <strong>Minister of Social Practice Department in Dalian University of Technology </strong>  
+          </button>
+          <span class="date">Mar 2017 – Mar 2018</span>
+        </p>
+      
+        <div class="collapse" id="DLUT">
+          <div class="card card-body">
+            <p>Managed 47 members and served for over 3000 students’ social practices in our Faculty.</p>
+            <p>Accumulated planning large scale activities (over 200 participants) experience and enhanced management ability.</p>
+            <p>Acquired the ability to produce attracting slides and to give a fluent speech to over 200 audiences without draft.</p>
+          </div>
+        </div>
+
       </div>
 
       <div class="post">
+        <button class="btn btn-primary toggleAllButton" type="button" data-toggle="collapse" data-target="#Network,#AR,#UI,#RLC,#compiler,#website" aria-expanded="false" aria-controls="collapseExample">
+          <strong>Show/Hide All</strong>  
+        </button>
         <h2>PROJECT</h2>
-        <p class="emph"><strong>Robust Low-latency Client-Server Network Framework</strong></p>
-        <p>Set up a Node.js server to support real-time bidirectional event-driven communication over TCP.</p>
-        <p>Wrote C# script to build multi-platform clients in Unity 3D to emit and handle events.</p>
-        <p>This network framework is deployed on both of my AR and VR projects for efficient data transmission.</p>
+
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#Network" aria-expanded="false" aria-controls="collapseExample">
+            <strong>Robust Low-latency Client-Server Network Framework </strong>  
+          </button>
+        </p>
+      
+        <div class="collapse" id="Network">
+          <div class="card card-body">
+            <p>Set up a Node.js server to support real-time bidirectional event-driven communication over TCP.</p>
+            <p>Wrote C# script to build multi-platform clients in Unity 3D to emit and handle events.</p>
+            <p>This network framework is deployed on both of my AR and VR projects for efficient data transmission.</p>
+          </div>
+        </div>
+
+        
 
         <p class="projectLink">
           <a href="https://dl.acm.org/doi/abs/10.1145/3355088.3365166"><i class="fab fa-readme fa-2x"></i></a> 
            
           <a href="https://www.youtube.com/watch?v=gogUKeWv3GQ&t=35s"><i class="fab fa-youtube fa-2x"></i></a>
         </p>
-
-        <p class="emph"><strong>AR Guided Tumor Puncture Surgery System</strong> </p>
-        <p>Developed a system to track optical markers (attached on patient, ablation needle and AR glasses) in real-time.</p>
-        <p>Transferred transformation of optical markers to the prediction model using the robust network.</p>
-        <p>Precisely overlay the holographic display (respiration prediction model output) to the real world using transformation matrix and fast RANSAC algorithm.</p>
-        <p>Equipped with AR glasses and our system, surgeons can “see through” patients’ bodies to precisely puncture tumors.</p>
-
-        <p class="emph"><strong>User Study in VR Depth Perception Improvement System</strong></p>
-        <p>Inherited and improved the restful user interface design and effective interaction methods of my VR meeting system.</p>
-        <p>We performed comparison experiments on more than 30 users and collected feedback with NASA-TLX. We adopted
-          the one-way ANOVA with post hoc Tukey to analyze the error distance data.</p>
-        <p>The results show users can target spatial object efficiently (with less task load and error) in our guiding system.</p>
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#AR" aria-expanded="false" aria-controls="collapseExample">
+            <strong>AR Guided Tumor Puncture Surgery System </strong>  
+          </button>
+        </p>
+      
+        <div class="collapse" id="AR">
+          <div class="card card-body">
+            <p>Developed a system to track optical markers (attached on patient, ablation needle and AR glasses) in real-time.</p>
+            <p>Transferred transformation of optical markers to the prediction model using the robust network.</p>
+            <p>Precisely overlay the holographic display (respiration prediction model output) to the real world using transformation matrix and fast RANSAC algorithm.</p>
+            <p>Equipped with AR glasses and our system, surgeons can “see through” patients’ bodies to precisely puncture tumors.</p>
+          </div>
+        </div>    
+      
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#UI" aria-expanded="false" aria-controls="collapseExample">
+            <strong>User Study in VR Depth Perception Improvement System </strong>  
+          </button>
+        </p>
+      
+        <div class="collapse" id="UI">
+          <div class="card card-body">
+            <p>Inherited and improved the restful user interface design and effective interaction methods of my VR meeting system.</p>
+            <p>We performed comparison experiments on more than 30 users and collected feedback with NASA-TLX. We adopted
+              the one-way ANOVA with post hoc Tukey to analyze the error distance data.</p>
+            <p>The results show users can target spatial object efficiently (with less task load and error) in our guiding system.</p>
+          </div>
+        </div>         
         
         <p class="projectLink">
           <a href="https://github.com/1464439923/Adaptive-Learning-Interactive-RL"><i class="fab fa-github fa-2x"></i></a> 
         </p>
-        <p class="emph"><strong>Adaptive human-agent interactive reinforcement learning</strong> (continuous domain)</p>
-        <p>Experiment: cartpole, a game to balance the pole to get higher score.</p>
-        <p>Coded to realize four human-agent interaction strategies(reward shaping, q augmentation, control sharing, action
-          biasing) and our proposed adaptive learning strategy involving simulated oracles and real human feedback.</p>
-        <p>Conducted the experiment among 10 participants for 10 runs each strategies, collected data and quantitatively
-          analyzed results in the paper.</p>
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#RLC" aria-expanded="false" aria-controls="collapseExample">
+            <strong>Adaptive human-agent interactive reinforcement learning </strong>  (continuous domain)
+          </button>
+        </p>
+      
+        <div class="collapse" id="RLC">
+          <div class="card card-body">
+            <p>Experiment: cartpole, a game to balance the pole to get higher score.</p>
+            <p>Coded to realize four human-agent interaction strategies(reward shaping, q augmentation, control sharing, action
+              biasing) and our proposed adaptive learning strategy involving simulated oracles and real human feedback.</p>
+            <p>Conducted the experiment among 10 participants for 10 runs each strategies, collected data and quantitatively
+              analyzed results in the paper.</p>
+          </div>
+        </div>    
+        
         
         <p class="projectLink">
           <a href="https://github.com/1464439923/my-compiler"><i class="fab fa-github fa-2x"></i></a> 
         </p>
-        
-        <p class="emph"><strong>programming language compiler</strong></p>
-        <p>Defined a programming language called sample S++ including function call, 29 reserved words(switch, while,
-          break, et al.), compound statements, arithmetic operations and relational operations with priority, et al.</p>
-        <p>Accomplished lexical analysis, grammatical analysis, semantic analysis, intermediate codes generation and
-          interpretive execution.</p>
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#compiler" aria-expanded="false" aria-controls="collapseExample">
+            <strong>Programming Language Compiler </strong>  
+          </button>
+        </p>
+      
+        <div class="collapse" id="compiler">
+          <div class="card card-body">
+            <p>Defined a programming language called sample S++ including function call, 29 reserved words(switch, while,
+              break, et al.), compound statements, arithmetic operations and relational operations with priority, et al.</p>
+            <p>Accomplished lexical analysis, grammatical analysis, semantic analysis, intermediate codes generation and
+              interpretive execution.</p>
+          </div>
+        </div>
         
         <p class="projectLink">
           <a href="https://github.com/1464439923/website"><i class="fab fa-github fa-2x"></i></a> 
         </p>
-
-        <p class="emph"><strong>My Personal Website</strong></p>
-        <p>Familiar with using HTML, CSS, javascript, Bootstrap 4, express, mongoDB, mongoose to build the whole website.</p>
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#website" aria-expanded="false" aria-controls="collapseExample">
+            <strong>My Personal Website </strong>  
+          </button>
+        </p>
+      
+        <div class="collapse" id="website">
+          <div class="card card-body">
+            <p>Familiar with using HTML, CSS, javascript, Bootstrap 4 to construct an elegant web font-end.</p>
+            <p>Familiar with using Docker, Kubernetes, Flask(python) Express, MongoDB, Mongoose to establish a robust back-end.</p>
+          </div>
+        </div>
+        
       </div>
       <div class="post">
         <h2>HONOR & SCHOLARSHIP</h2>

@@ -63,3 +63,20 @@ nav{
 .first-navbar-brand{
   width: 125px;
 }
+.btn-light{
+  width: 75%;
+  text-align: left;
+}
+.toggleAllButton{
+  float: right;
+}
+/* move when scrolling */
+.Fixed{
+  position: fixed;
+  top: 40%;
+  left:5%;
+}
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
