@@ -36,11 +36,26 @@
       }
       
     }
+    $(document).ready(function(){
+      $(".tip-bottom").tooltip({placement : 'bottom'});
+    $('[data-toggle="tooltip"]').tooltip();   
+    }); 
+
+    //info change
+    window.setTimeout("emphasizeInfo();", 1000);
+    window.setTimeout("closeInfo();", 6000);
+    function emphasizeInfo(){
+      document.getElementById("Info").style.fontSize="large";
+      document.getElementById("Info").style.fontWeight="bold";
+    }
+    function closeInfo(){
+    document.getElementById("Info").style.display=" none";
+    }
   </script>
 </head>
 <body>
     <button type="button" class="btn btn-default Fixed" aria-label="Left Align" onclick="aud_play_pause()"><i class="fas fa-music fa-2x"></i></button>
-    <audio id="myAudio" autoplay="autoplay">
+    <audio id="myAudio">
       <source src="audio/theBornWinner.mp3" type='audio/mp3'>
       Your user agent does not support the HTML5 Audio element.
     </audio> 
@@ -60,7 +75,7 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="imageGallery/imageGallery.html">Gallery</a>
+            <a class="nav-link" href="imageGallery/imageGallery.html" data-toggle="tooltip" data-placement="bottom" title="Contains autoplay music">Gallery</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -97,7 +112,7 @@
         <a href="https://www.researchgate.net/profile/Tianpei_Yang4"><img src="images/researchGate.png" id="researchGateIcon"></a>
         <span class="spaceBetweenIcon"></span>
         <span class="spaceBetweenIcon"></span>
-        <font size=4.5>Recommend browsing this web on your computer.</font>
+        <span id="Info"><font size=4.5>Recommend browsing this web on your computer. Click music icon to play background music. </font></span>
     </div>
     
     <div id="all">
